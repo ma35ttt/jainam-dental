@@ -1,0 +1,1874 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jainam Dental Clinic | Dr. Shefali Jain | Raipur</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --teal:       #0D5C63;
+    --teal-light: #1A8A94;
+    --teal-dark:  #093E43;
+    --gold:       #C9A84C;
+    --gold-light: #E8C86A;
+    --mint:       #E8F5F0;
+    --white:      #F8FAF9;
+    --charcoal:   #1A1A2E;
+    --gray:       #6B7280;
+    --gray-light: #F3F4F6;
+    --radius:     16px;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--white);
+    color: var(--charcoal);
+    overflow-x: hidden;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 5vw;
+    height: 70px;
+    background: rgba(13,92,99,0.97);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 2px 20px rgba(0,0,0,0.18);
+    transition: background .3s;
+  }
+  .nav-logo {
+    display: flex; align-items: center; gap: 10px; text-decoration: none;
+  }
+  .nav-logo-icon {
+    width: 38px; height: 38px; background: var(--gold); border-radius: 50%;
+    display: flex; align-items: center; justify-content: center; font-size: 20px;
+  }
+  .nav-logo-text { font-family: 'Playfair Display', serif; font-size: 1.15rem; color: #fff; letter-spacing: .3px; }
+  .nav-logo-sub  { font-size: .68rem; color: rgba(255,255,255,.65); letter-spacing: 1px; text-transform: uppercase; display: block; }
+  .nav-links { display: flex; gap: 28px; list-style: none; }
+  .nav-links a { color: rgba(255,255,255,.85); text-decoration: none; font-size: .88rem; font-weight: 500; letter-spacing: .3px; transition: color .2s; }
+  .nav-links a:hover { color: var(--gold-light); }
+  .nav-cta {
+    background: var(--gold); color: var(--teal-dark); border: none; cursor: pointer;
+    padding: 9px 22px; border-radius: 40px; font-size: .88rem; font-weight: 600;
+    transition: background .2s, transform .2s; text-decoration: none;
+  }
+  .nav-cta:hover { background: var(--gold-light); transform: translateY(-1px); }
+  .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; }
+  .hamburger span { width: 24px; height: 2px; background: #fff; border-radius: 2px; transition: .3s; }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    background: linear-gradient(135deg, var(--teal-dark) 0%, var(--teal) 55%, var(--teal-light) 100%);
+    display: flex; align-items: center; justify-content: center;
+    position: relative; overflow: hidden; padding: 90px 5vw 60px;
+  }
+  .hero-blob {
+    position: absolute; border-radius: 50%; opacity: .08;
+    background: var(--gold);
+    animation: blobFloat 8s ease-in-out infinite;
+  }
+  .hero-blob-1 { width: 420px; height: 420px; top: -80px; right: -80px; }
+  .hero-blob-2 { width: 280px; height: 280px; bottom: 60px; left: -60px; animation-delay: -4s; }
+  @keyframes blobFloat { 0%,100%{transform:translateY(0) scale(1)} 50%{transform:translateY(-24px) scale(1.04)} }
+
+  .hero-inner {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 60px;
+    align-items: center; max-width: 1200px; width: 100%; position: relative; z-index: 2;
+  }
+  .hero-eyebrow {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(201,168,76,.18); border: 1px solid rgba(201,168,76,.4);
+    color: var(--gold-light); font-size: .78rem; font-weight: 600;
+    letter-spacing: 1.2px; text-transform: uppercase;
+    padding: 6px 14px; border-radius: 40px; margin-bottom: 20px;
+  }
+  .hero-eyebrow::before { content: '★'; font-size: .75rem; }
+  .hero-h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.2rem, 4.5vw, 3.6rem);
+    color: #fff; line-height: 1.18; font-weight: 700;
+    margin-bottom: 22px;
+  }
+  .hero-h1 em { font-style: italic; color: var(--gold-light); }
+  .hero-desc {
+    color: rgba(255,255,255,.72); font-size: 1.05rem; line-height: 1.72;
+    max-width: 460px; margin-bottom: 36px;
+  }
+  .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 44px; }
+  .btn-primary {
+    background: var(--gold); color: var(--teal-dark);
+    padding: 13px 28px; border-radius: 40px; font-weight: 700; font-size: .95rem;
+    text-decoration: none; transition: background .2s, transform .2s;
+    display: inline-flex; align-items: center; gap: 8px;
+  }
+  .btn-primary:hover { background: var(--gold-light); transform: translateY(-2px); }
+  .btn-outline {
+    border: 2px solid rgba(255,255,255,.5); color: #fff;
+    padding: 11px 26px; border-radius: 40px; font-weight: 500; font-size: .95rem;
+    text-decoration: none; transition: border-color .2s, background .2s;
+    display: inline-flex; align-items: center; gap: 8px;
+  }
+  .btn-outline:hover { border-color: #fff; background: rgba(255,255,255,.08); }
+
+  .hero-badges { display: flex; gap: 22px; flex-wrap: wrap; }
+  .hero-badge {
+    display: flex; align-items: center; gap: 9px;
+    color: rgba(255,255,255,.75); font-size: .83rem;
+  }
+  .hero-badge-icon {
+    width: 36px; height: 36px; border-radius: 50%;
+    background: rgba(255,255,255,.12);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1rem; flex-shrink: 0;
+  }
+
+  /* Hero visual */
+  .hero-visual { display: flex; flex-direction: column; align-items: center; gap: 16px; }
+  .tooth-svg-wrap {
+    width: 100%; max-width: 360px;
+    background: rgba(255,255,255,.07);
+    border: 1px solid rgba(255,255,255,.14);
+    border-radius: 28px; padding: 32px;
+    display: flex; align-items: center; justify-content: center;
+    backdrop-filter: blur(8px);
+    animation: heroCardFloat 6s ease-in-out infinite;
+  }
+  @keyframes heroCardFloat { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-12px)} }
+
+  .rating-card {
+    background: #fff; border-radius: 16px; padding: 16px 22px;
+    display: flex; align-items: center; gap: 14px;
+    box-shadow: 0 12px 36px rgba(0,0,0,.18);
+    align-self: flex-start; margin-left: 10px;
+    animation: slideInRight .8s ease forwards .4s; opacity: 0;
+    transform: translateX(20px);
+  }
+  @keyframes slideInRight { to { opacity: 1; transform: translateX(0); } }
+  .rating-num { font-size: 2.4rem; font-weight: 800; color: var(--teal); line-height: 1; }
+  .rating-stars { color: #F59E0B; font-size: 1.1rem; letter-spacing: 1px; display: block; }
+  .rating-label { color: var(--gray); font-size: .8rem; }
+
+  .patients-card {
+    background: var(--gold); border-radius: 16px; padding: 14px 20px;
+    display: flex; align-items: center; gap: 12px;
+    box-shadow: 0 8px 24px rgba(201,168,76,.4);
+    align-self: flex-end; margin-right: 10px;
+    animation: slideInLeft .8s ease forwards .6s; opacity: 0;
+    transform: translateX(-20px);
+  }
+  @keyframes slideInLeft { to { opacity: 1; transform: translateX(0); } }
+  .patients-num { font-size: 1.7rem; font-weight: 800; color: var(--teal-dark); line-height: 1; }
+  .patients-label { color: var(--teal-dark); font-size: .8rem; opacity: .8; font-weight: 500; }
+
+  /* ── WAVE ── */
+  .wave-divider { display: block; line-height: 0; }
+  .wave-divider svg { display: block; width: 100%; }
+
+  /* ── SECTION BASE ── */
+  section { padding: 90px 5vw; }
+  .section-eyebrow {
+    display: inline-block; font-size: .75rem; font-weight: 700;
+    letter-spacing: 2px; text-transform: uppercase;
+    color: var(--teal); background: var(--mint);
+    padding: 5px 14px; border-radius: 20px; margin-bottom: 14px;
+  }
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.8rem, 3.2vw, 2.7rem);
+    color: var(--charcoal); line-height: 1.2; font-weight: 700;
+    margin-bottom: 16px;
+  }
+  .section-title span { color: var(--teal); }
+  .section-sub { color: var(--gray); font-size: 1rem; line-height: 1.7; max-width: 560px; }
+  .section-header { margin-bottom: 52px; }
+  .section-header.center { text-align: center; display: flex; flex-direction: column; align-items: center; }
+  .section-header.center .section-sub { text-align: center; }
+
+  /* ── STATS BAR ── */
+  .stats-bar {
+    background: var(--teal); padding: 44px 5vw;
+    display: flex; justify-content: center;
+  }
+  .stats-inner { display: flex; gap: 0; max-width: 900px; width: 100%; }
+  .stat-item {
+    flex: 1; text-align: center; padding: 0 20px;
+    border-right: 1px solid rgba(255,255,255,.15);
+  }
+  .stat-item:last-child { border-right: none; }
+  .stat-num { font-family: 'Playfair Display', serif; font-size: 2.6rem; font-weight: 700; color: var(--gold); line-height: 1; }
+  .stat-label { color: rgba(255,255,255,.7); font-size: .83rem; margin-top: 6px; text-transform: uppercase; letter-spacing: .8px; }
+
+  /* ── SERVICES ── */
+  #services { background: var(--white); }
+  .services-grid {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+    gap: 24px; max-width: 1200px; margin: 0 auto;
+  }
+  .service-card {
+    background: #fff; border-radius: 20px; padding: 32px 28px;
+    border: 1.5px solid #e8edf0;
+    transition: transform .25s, border-color .25s, box-shadow .25s;
+    position: relative; overflow: hidden;
+  }
+  .service-card::before {
+    content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 3px;
+    background: linear-gradient(90deg, var(--teal), var(--teal-light));
+    transform: scaleX(0); transform-origin: left; transition: transform .3s;
+  }
+  .service-card:hover { transform: translateY(-6px); border-color: var(--teal-light); box-shadow: 0 18px 44px rgba(13,92,99,.12); }
+  .service-card:hover::before { transform: scaleX(1); }
+  .service-icon {
+    width: 58px; height: 58px; background: var(--mint); border-radius: 16px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.7rem; margin-bottom: 20px;
+    transition: background .3s;
+  }
+  .service-card:hover .service-icon { background: var(--teal); filter: grayscale(0); }
+  .service-name { font-family: 'Playfair Display', serif; font-size: 1.18rem; font-weight: 600; color: var(--charcoal); margin-bottom: 10px; }
+  .service-desc { color: var(--gray); font-size: .9rem; line-height: 1.65; }
+  .service-tag {
+    display: inline-block; margin-top: 14px;
+    font-size: .72rem; font-weight: 600; letter-spacing: .8px; text-transform: uppercase;
+    color: var(--teal); background: var(--mint); padding: 4px 10px; border-radius: 20px;
+  }
+
+  /* ── DOCTOR ── */
+  #doctor { background: linear-gradient(135deg, #f0faf8 0%, #e8f5f0 100%); }
+  .doctor-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; max-width: 1100px; margin: 0 auto; }
+  .doctor-photo-wrap { position: relative; display: flex; justify-content: center; }
+  .doctor-photo-bg {
+    width: 340px; height: 400px; background: var(--teal);
+    border-radius: 32px 32px 80px 32px; position: relative; overflow: hidden;
+    box-shadow: 0 24px 60px rgba(13,92,99,.28);
+  }
+  .doctor-photo-bg svg { width: 100%; height: 100%; }
+  .doctor-badge-float {
+    position: absolute; bottom: -16px; right: -16px;
+    background: var(--gold); border-radius: 16px; padding: 16px 20px;
+    box-shadow: 0 8px 24px rgba(201,168,76,.4);
+  }
+  .doctor-badge-float p { font-size: .8rem; color: var(--teal-dark); font-weight: 600; }
+  .doctor-badge-float span { font-size: 1.5rem; font-weight: 800; color: var(--teal-dark); }
+
+  .doctor-info { }
+  .doctor-name-tag { font-size: .8rem; color: var(--teal); font-weight: 600; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 8px; }
+  .doctor-name { font-family: 'Playfair Display', serif; font-size: 2.4rem; font-weight: 700; color: var(--charcoal); line-height: 1.2; margin-bottom: 8px; }
+  .doctor-title { font-size: 1rem; color: var(--teal-light); font-weight: 500; margin-bottom: 20px; }
+  .doctor-bio { color: var(--gray); font-size: .95rem; line-height: 1.75; margin-bottom: 28px; }
+  .doctor-quals { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 32px; }
+  .qual-chip {
+    display: flex; align-items: center; gap: 7px;
+    background: #fff; border: 1.5px solid #d0e8e4;
+    border-radius: 40px; padding: 7px 14px;
+    font-size: .82rem; color: var(--teal-dark); font-weight: 500;
+  }
+  .qual-chip::before { content: '✓'; color: var(--teal); font-weight: 700; }
+  .doctor-contact { display: flex; gap: 14px; flex-wrap: wrap; }
+  .doc-btn { display: inline-flex; align-items: center; gap: 8px; padding: 11px 24px; border-radius: 40px; font-size: .88rem; font-weight: 600; text-decoration: none; transition: .2s; }
+  .doc-btn-primary { background: var(--teal); color: #fff; }
+  .doc-btn-primary:hover { background: var(--teal-dark); transform: translateY(-2px); }
+  .doc-btn-ghost { border: 2px solid var(--teal); color: var(--teal); background: transparent; }
+  .doc-btn-ghost:hover { background: var(--mint); }
+
+  /* ── REVIEWS ── */
+  #reviews { background: var(--charcoal); }
+  #reviews .section-eyebrow { color: var(--gold); background: rgba(201,168,76,.15); }
+  #reviews .section-title { color: #fff; }
+  #reviews .section-title span { color: var(--gold-light); }
+  #reviews .section-sub { color: rgba(255,255,255,.6); }
+
+  .reviews-overall {
+    display: flex; align-items: center; gap: 28px; flex-wrap: wrap;
+    background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.1);
+    border-radius: 20px; padding: 28px 32px; margin-bottom: 40px; max-width: 900px;
+  }
+  .reviews-big-num { font-family: 'Playfair Display', serif; font-size: 5rem; font-weight: 700; color: var(--gold); line-height: 1; }
+  .reviews-stars-row { font-size: 1.4rem; color: #F59E0B; letter-spacing: 2px; display: block; margin-bottom: 4px; }
+  .reviews-count { color: rgba(255,255,255,.55); font-size: .9rem; }
+  .reviews-bars { flex: 1; min-width: 180px; }
+  .bar-row { display: flex; align-items: center; gap: 10px; margin-bottom: 7px; }
+  .bar-label { color: rgba(255,255,255,.6); font-size: .78rem; width: 30px; text-align: right; }
+  .bar-track { flex: 1; height: 7px; background: rgba(255,255,255,.1); border-radius: 4px; overflow: hidden; }
+  .bar-fill { height: 100%; background: linear-gradient(90deg, var(--gold), var(--gold-light)); border-radius: 4px; }
+  .bar-pct { color: rgba(255,255,255,.5); font-size: .75rem; width: 28px; }
+  .platform-badges { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 4px; }
+  .platform-badge {
+    display: flex; align-items: center; gap: 7px;
+    background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.12);
+    border-radius: 40px; padding: 6px 14px; font-size: .8rem; color: rgba(255,255,255,.7);
+  }
+
+  .reviews-grid {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+  }
+  .review-card {
+    background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.1);
+    border-radius: 20px; padding: 26px 24px;
+    transition: transform .25s, background .25s;
+    position: relative;
+  }
+  .review-card:hover { transform: translateY(-4px); background: rgba(255,255,255,.09); }
+  .review-quote { font-size: 2.8rem; color: var(--gold); line-height: .8; font-family: Georgia, serif; margin-bottom: 4px; }
+  .review-text { color: rgba(255,255,255,.8); font-size: .93rem; line-height: 1.7; margin-bottom: 20px; font-style: italic; }
+  .review-footer { display: flex; justify-content: space-between; align-items: center; }
+  .reviewer-avatar {
+    width: 38px; height: 38px; border-radius: 50%; background: var(--teal);
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 700; font-size: .95rem; color: #fff; margin-right: 10px;
+  }
+  .reviewer-info { display: flex; align-items: center; }
+  .reviewer-name { font-size: .88rem; color: #fff; font-weight: 600; }
+  .reviewer-sub { font-size: .75rem; color: rgba(255,255,255,.45); }
+  .review-stars { color: #F59E0B; font-size: .85rem; }
+
+  /* ── FACILITIES ── */
+  #facilities { background: var(--white); }
+  .facilities-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 20px; max-width: 1200px; margin: 0 auto; }
+  .facility-card {
+    background: var(--mint); border-radius: 18px; padding: 28px 24px;
+    display: flex; flex-direction: column; gap: 12px;
+    border: 1.5px solid transparent;
+    transition: border-color .25s, transform .25s, box-shadow .25s;
+  }
+  .facility-card:hover { border-color: var(--teal-light); transform: translateY(-4px); box-shadow: 0 12px 30px rgba(13,92,99,.1); }
+  .facility-icon { font-size: 2.2rem; }
+  .facility-name { font-weight: 700; font-size: 1rem; color: var(--teal-dark); }
+  .facility-desc { font-size: .85rem; color: var(--gray); line-height: 1.6; }
+  .facility-avail { display: inline-block; font-size: .72rem; font-weight: 600; color: #059669; background: #d1fae5; padding: 3px 10px; border-radius: 20px; }
+
+  /* ── MAP SECTION ── */
+  #location { background: #f4f9f8; }
+  .location-inner { display: grid; grid-template-columns: 1fr 1.4fr; gap: 48px; align-items: start; max-width: 1200px; margin: 0 auto; }
+  .location-info { }
+  .contact-items { display: flex; flex-direction: column; gap: 18px; margin-bottom: 32px; }
+  .contact-item { display: flex; align-items: flex-start; gap: 16px; }
+  .contact-item-icon {
+    width: 48px; height: 48px; background: var(--teal); color: #fff;
+    border-radius: 14px; display: flex; align-items: center; justify-content: center;
+    font-size: 1.2rem; flex-shrink: 0;
+  }
+  .contact-item-label { font-size: .75rem; text-transform: uppercase; letter-spacing: 1px; color: var(--gray); font-weight: 600; margin-bottom: 3px; }
+  .contact-item-val { font-size: .97rem; color: var(--charcoal); font-weight: 500; line-height: 1.5; }
+  .contact-item-val a { color: var(--teal); text-decoration: none; }
+  .contact-item-val a:hover { text-decoration: underline; }
+  .hours-table { width: 100%; border-collapse: collapse; font-size: .88rem; margin-bottom: 28px; }
+  .hours-table td { padding: 8px 0; border-bottom: 1px solid #e5eceb; color: var(--charcoal); }
+  .hours-table td:first-child { color: var(--gray); width: 120px; }
+  .hours-table .open { color: #059669; font-weight: 600; }
+  .hours-table .closed-td { color: #DC2626; font-weight: 600; }
+
+  .map-embed-wrap {
+    border-radius: 20px; overflow: hidden;
+    box-shadow: 0 12px 40px rgba(0,0,0,.12);
+    border: 1.5px solid #dde8e6; height: 460px;
+  }
+  .map-embed-wrap iframe { width: 100%; height: 100%; border: none; display: block; }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--teal-dark); color: rgba(255,255,255,.7);
+    padding: 60px 5vw 30px;
+  }
+  .footer-grid { display: grid; grid-template-columns: 1.8fr 1fr 1fr; gap: 48px; margin-bottom: 48px; max-width: 1200px; }
+  .footer-brand { }
+  .footer-logo { font-family: 'Playfair Display', serif; font-size: 1.4rem; color: #fff; margin-bottom: 12px; }
+  .footer-tagline { font-size: .88rem; line-height: 1.7; max-width: 300px; }
+  .footer-social { display: flex; gap: 12px; margin-top: 22px; }
+  .social-link {
+    width: 38px; height: 38px; background: rgba(255,255,255,.1);
+    border-radius: 10px; display: flex; align-items: center; justify-content: center;
+    color: rgba(255,255,255,.7); font-size: .9rem; text-decoration: none;
+    transition: background .2s, color .2s;
+  }
+  .social-link:hover { background: var(--gold); color: var(--teal-dark); }
+  .footer-col h4 { color: #fff; font-size: .9rem; font-weight: 600; letter-spacing: .5px; margin-bottom: 16px; text-transform: uppercase; }
+  .footer-links { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+  .footer-links a { color: rgba(255,255,255,.6); text-decoration: none; font-size: .88rem; transition: color .2s; }
+  .footer-links a:hover { color: var(--gold-light); }
+  .footer-bottom { border-top: 1px solid rgba(255,255,255,.1); padding-top: 24px; display: flex; justify-content: space-between; align-items: center; flex-wrap: gap; font-size: .82rem; max-width: 1200px; }
+  .footer-bottom p { color: rgba(255,255,255,.4); }
+  .footer-bottom a { color: rgba(255,255,255,.4); text-decoration: none; }
+
+  /* ── SCROLL REVEAL ── */
+  .reveal { opacity: 0; transform: translateY(28px); transition: opacity .65s ease, transform .65s ease; }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+
+  /* ── FLOATING CTA ── */
+  .floating-whatsapp {
+    position: fixed; bottom: 28px; right: 28px; z-index: 200;
+    width: 58px; height: 58px; background: #25D366; color: #fff;
+    border-radius: 50%; display: flex; align-items: center; justify-content: center;
+    font-size: 1.7rem; box-shadow: 0 6px 22px rgba(37,211,102,.45);
+    text-decoration: none; transition: transform .2s, box-shadow .2s;
+  }
+  .floating-whatsapp:hover { transform: scale(1.12); box-shadow: 0 10px 30px rgba(37,211,102,.55); }
+
+  /* ── MOBILE NAV MENU ── */
+  .mobile-menu {
+    display: none; position: fixed; top: 70px; left: 0; right: 0; z-index: 99;
+    background: var(--teal-dark); padding: 20px; flex-direction: column; gap: 16px;
+    box-shadow: 0 8px 24px rgba(0,0,0,.2);
+  }
+  .mobile-menu.open { display: flex; }
+  .mobile-menu a { color: rgba(255,255,255,.85); text-decoration: none; font-size: .95rem; padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,.08); }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    .hero-inner { grid-template-columns: 1fr; gap: 40px; }
+    .hero-visual { display: none; }
+    .doctor-inner { grid-template-columns: 1fr; }
+    .doctor-photo-wrap { display: none; }
+    .location-inner { grid-template-columns: 1fr; }
+    .footer-grid { grid-template-columns: 1fr 1fr; }
+    .nav-links, .nav-cta { display: none; }
+    .hamburger { display: flex; }
+    .stats-inner { flex-wrap: wrap; }
+    .stat-item { min-width: 45%; border-right: none; border-bottom: 1px solid rgba(255,255,255,.1); padding: 14px; }
+  }
+  @media (max-width: 600px) {
+    .footer-grid { grid-template-columns: 1fr; }
+    section { padding: 60px 4vw; }
+    .reviews-overall { flex-direction: column; gap: 16px; }
+    .reviews-big-num { font-size: 3.5rem; }
+  }
+
+  /* ── APPOINTMENT BOOKING ── */
+  #appointment {
+    background: linear-gradient(135deg, var(--teal-dark) 0%, var(--teal) 60%, #1e9ea8 100%);
+    position: relative; overflow: hidden;
+  }
+  #appointment::before {
+    content: ''; position: absolute; inset: 0;
+    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Ccircle cx='30' cy='30' r='4'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    pointer-events: none;
+  }
+  #appointment .section-eyebrow { color: var(--gold); background: rgba(201,168,76,.15); border: 1px solid rgba(201,168,76,.3); }
+  #appointment .section-title { color: #fff; }
+  #appointment .section-title span { color: var(--gold-light); }
+  #appointment .section-sub { color: rgba(255,255,255,.7); }
+
+  .appt-layout {
+    display: grid; grid-template-columns: 1fr 1.15fr; gap: 52px;
+    align-items: start; max-width: 1160px; margin: 0 auto; position: relative; z-index: 1;
+  }
+
+  /* Left side info */
+  .appt-info { }
+  .appt-why { display: flex; flex-direction: column; gap: 18px; margin: 32px 0; }
+  .appt-why-item { display: flex; align-items: flex-start; gap: 14px; }
+  .appt-why-icon {
+    width: 44px; height: 44px; border-radius: 12px;
+    background: rgba(255,255,255,.12); border: 1px solid rgba(255,255,255,.2);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.15rem; flex-shrink: 0;
+  }
+  .appt-why-text strong { display: block; color: #fff; font-size: .92rem; margin-bottom: 3px; }
+  .appt-why-text span { color: rgba(255,255,255,.6); font-size: .82rem; line-height: 1.5; }
+  .appt-contact-note {
+    background: rgba(255,255,255,.09); border: 1px solid rgba(255,255,255,.15);
+    border-radius: 16px; padding: 18px 20px;
+    display: flex; align-items: center; gap: 14px;
+    color: rgba(255,255,255,.8); font-size: .88rem; line-height: 1.5;
+  }
+  .appt-contact-note strong { color: #fff; }
+
+  /* Right side: form card */
+  .appt-form-card {
+    background: #fff; border-radius: 24px; padding: 36px 32px;
+    box-shadow: 0 24px 64px rgba(0,0,0,.22);
+  }
+  .appt-form-title {
+    font-family: 'Playfair Display', serif; font-size: 1.45rem;
+    font-weight: 700; color: var(--charcoal); margin-bottom: 4px;
+  }
+  .appt-form-sub { color: var(--gray); font-size: .85rem; margin-bottom: 28px; }
+
+  /* Step indicator */
+  .appt-steps {
+    display: flex; align-items: center; gap: 0; margin-bottom: 28px;
+  }
+  .appt-step {
+    flex: 1; display: flex; flex-direction: column; align-items: center; gap: 6px; position: relative;
+  }
+  .appt-step:not(:last-child)::after {
+    content: ''; position: absolute; top: 16px; left: 50%; width: 100%;
+    height: 2px; background: #e5e7eb; z-index: 0;
+  }
+  .appt-step.done:not(:last-child)::after { background: var(--teal); }
+  .appt-step-dot {
+    width: 32px; height: 32px; border-radius: 50%; border: 2px solid #e5e7eb;
+    background: #fff; display: flex; align-items: center; justify-content: center;
+    font-size: .78rem; font-weight: 700; color: #9CA3AF; z-index: 1; position: relative;
+    transition: all .3s;
+  }
+  .appt-step.active .appt-step-dot {
+    border-color: var(--teal); background: var(--teal); color: #fff;
+    box-shadow: 0 0 0 4px rgba(13,92,99,.15);
+  }
+  .appt-step.done .appt-step-dot { border-color: var(--teal); background: var(--teal); color: #fff; }
+  .appt-step-label { font-size: .7rem; color: #9CA3AF; font-weight: 500; text-align: center; }
+  .appt-step.active .appt-step-label { color: var(--teal); font-weight: 600; }
+  .appt-step.done .appt-step-label { color: var(--teal); }
+
+  /* Form panels */
+  .appt-panel { display: none; }
+  .appt-panel.active { display: block; animation: fadeSlideIn .35s ease; }
+  @keyframes fadeSlideIn { from { opacity: 0; transform: translateX(16px); } to { opacity: 1; transform: translateX(0); } }
+
+  /* Service selector */
+  .service-select-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 22px;
+  }
+  .svc-option {
+    border: 2px solid #E5E7EB; border-radius: 12px; padding: 12px 10px;
+    cursor: pointer; display: flex; align-items: center; gap: 9px;
+    transition: border-color .2s, background .2s, transform .15s;
+    user-select: none;
+  }
+  .svc-option:hover { border-color: var(--teal-light); background: #f0faf8; transform: translateY(-1px); }
+  .svc-option.selected { border-color: var(--teal); background: var(--mint); }
+  .svc-option input[type="checkbox"] { display: none; }
+  .svc-check {
+    width: 20px; height: 20px; border: 2px solid #D1D5DB; border-radius: 6px;
+    display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+    transition: all .2s; font-size: .7rem;
+  }
+  .svc-option.selected .svc-check { background: var(--teal); border-color: var(--teal); color: #fff; }
+  .svc-emoji { font-size: 1.1rem; }
+  .svc-name { font-size: .82rem; font-weight: 600; color: var(--charcoal); line-height: 1.3; }
+  .svc-tag-small { font-size: .65rem; color: var(--gray); font-weight: 400; }
+
+  /* Selected summary pill */
+  .selected-summary {
+    background: var(--mint); border: 1px solid #b5ddd6; border-radius: 10px;
+    padding: 10px 14px; margin-bottom: 18px; font-size: .82rem; color: var(--teal-dark);
+    min-height: 40px; display: flex; align-items: center; gap: 8px; flex-wrap: wrap;
+  }
+  .selected-summary .svc-pill {
+    background: var(--teal); color: #fff; border-radius: 20px;
+    padding: 3px 10px; font-size: .75rem; font-weight: 500; display: flex; align-items: center; gap: 5px;
+  }
+  .selected-summary .svc-pill button {
+    background: none; border: none; color: rgba(255,255,255,.7); cursor: pointer; padding: 0; font-size: .75rem; line-height: 1;
+  }
+  .selected-summary .svc-pill button:hover { color: #fff; }
+
+  /* Form fields */
+  .appt-field { margin-bottom: 18px; }
+  .appt-label { display: block; font-size: .8rem; font-weight: 600; color: var(--charcoal); margin-bottom: 6px; letter-spacing: .2px; }
+  .appt-label span { color: #EF4444; }
+  .appt-input, .appt-select, .appt-textarea {
+    width: 100%; padding: 11px 14px; border: 1.5px solid #E5E7EB; border-radius: 10px;
+    font-size: .9rem; font-family: 'Inter', sans-serif; color: var(--charcoal);
+    background: #fff; transition: border-color .2s, box-shadow .2s; outline: none;
+    appearance: none; -webkit-appearance: none;
+  }
+  .appt-input:focus, .appt-select:focus, .appt-textarea:focus {
+    border-color: var(--teal); box-shadow: 0 0 0 3px rgba(13,92,99,.1);
+  }
+  .appt-select { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%236B7280' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 14px center; padding-right: 36px; cursor: pointer; }
+  .appt-textarea { resize: vertical; min-height: 80px; }
+  .appt-field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+
+  /* Time slots */
+  .time-slots { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 6px; }
+  .time-slot {
+    border: 1.5px solid #E5E7EB; border-radius: 8px; padding: 7px 14px;
+    font-size: .82rem; font-weight: 500; color: var(--gray); cursor: pointer;
+    transition: all .2s; user-select: none; background: #fff;
+  }
+  .time-slot:hover { border-color: var(--teal-light); color: var(--teal); background: #f0faf8; }
+  .time-slot.selected { border-color: var(--teal); background: var(--teal); color: #fff; }
+  .time-slot.unavail { opacity: .4; cursor: not-allowed; text-decoration: line-through; }
+
+  /* Nav buttons */
+  .appt-nav { display: flex; gap: 12px; margin-top: 24px; }
+  .appt-btn-next {
+    flex: 1; background: var(--teal); color: #fff; border: none; cursor: pointer;
+    padding: 13px 24px; border-radius: 40px; font-size: .95rem; font-weight: 700;
+    font-family: 'Inter', sans-serif; transition: background .2s, transform .2s;
+  }
+  .appt-btn-next:hover { background: var(--teal-dark); transform: translateY(-1px); }
+  .appt-btn-next:disabled { background: #9CA3AF; cursor: not-allowed; transform: none; }
+  .appt-btn-back {
+    background: transparent; color: var(--gray); border: 1.5px solid #E5E7EB; cursor: pointer;
+    padding: 11px 22px; border-radius: 40px; font-size: .9rem; font-weight: 500;
+    font-family: 'Inter', sans-serif; transition: all .2s;
+  }
+  .appt-btn-back:hover { border-color: var(--teal); color: var(--teal); }
+
+  /* Success screen */
+  .appt-success {
+    text-align: center; padding: 24px 10px; display: none;
+    animation: fadeSlideIn .4s ease;
+  }
+  .appt-success.show { display: block; }
+  .success-checkmark {
+    width: 72px; height: 72px; background: #d1fae5; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 2.2rem; margin: 0 auto 20px;
+    animation: popIn .5s cubic-bezier(.18,.89,.32,1.28);
+  }
+  @keyframes popIn { from { transform: scale(0); } to { transform: scale(1); } }
+  .success-title { font-family: 'Playfair Display', serif; font-size: 1.5rem; color: var(--charcoal); margin-bottom: 10px; }
+  .success-sub { color: var(--gray); font-size: .9rem; line-height: 1.6; margin-bottom: 24px; }
+  .success-summary {
+    background: var(--mint); border-radius: 14px; padding: 18px 20px;
+    text-align: left; margin-bottom: 22px; font-size: .85rem;
+  }
+  .success-row { display: flex; justify-content: space-between; padding: 6px 0; border-bottom: 1px solid #d0e8e4; }
+  .success-row:last-child { border-bottom: none; }
+  .success-row span:first-child { color: var(--gray); }
+  .success-row span:last-child { color: var(--charcoal); font-weight: 600; text-align: right; max-width: 62%; }
+  .appt-reset-btn {
+    background: transparent; border: 1.5px solid var(--teal); color: var(--teal);
+    padding: 10px 24px; border-radius: 40px; font-size: .88rem; font-weight: 600;
+    cursor: pointer; font-family: 'Inter', sans-serif; transition: all .2s;
+  }
+  .appt-reset-btn:hover { background: var(--mint); }
+
+  /* Field error */
+  .field-error { font-size: .75rem; color: #EF4444; margin-top: 5px; display: none; }
+  .appt-input.error, .appt-select.error { border-color: #EF4444; }
+
+  @media (max-width: 900px) {
+    .appt-layout { grid-template-columns: 1fr; gap: 32px; }
+    .appt-info { order: 2; }
+    .appt-form-card { order: 1; }
+  }
+  @media (max-width: 560px) {
+    .service-select-grid { grid-template-columns: 1fr; }
+    .appt-field-row { grid-template-columns: 1fr; }
+    .appt-form-card { padding: 24px 18px; }
+    .appt-form-title { font-size: 1.2rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- FLOATING WHATSAPP -->
+<a class="floating-whatsapp" href="https://wa.me/919109522711" title="WhatsApp Us" target="_blank" rel="noopener">
+  💬
+</a>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="#">
+    <div class="nav-logo-icon">🦷</div>
+    <div>
+      <div class="nav-logo-text">Jainam Dental</div>
+      <span class="nav-logo-sub">Dr. Shefali Jain</span>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#doctor">Our Doctor</a></li>
+    <li><a href="#facilities">Facilities</a></li>
+    <li><a href="#reviews">Reviews</a></li>
+    <li><a href="#location">Location</a></li>
+  </ul>
+  <a class="nav-cta" href="#appointment">📅 Book Appointment</a>
+  <div class="hamburger" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#services" onclick="closeMenu()">Services</a>
+  <a href="#doctor" onclick="closeMenu()">Our Doctor</a>
+  <a href="#facilities" onclick="closeMenu()">Facilities</a>
+  <a href="#reviews" onclick="closeMenu()">Reviews</a>
+  <a href="#location" onclick="closeMenu()">Location &amp; Hours</a>
+  <a href="#appointment" onclick="closeMenu()" style="color:var(--gold-light);font-weight:700;">📅 Book Appointment</a>
+  <a href="tel:+919109522711" style="color:rgba(255,255,255,.7);">📞 Call: 091095 22711</a>
+</div>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-inner">
+    <div class="hero-content">
+      <div class="hero-eyebrow">Raipur's Top Rated Dental Clinic</div>
+      <h1 class="hero-h1">Your Smile Deserves<br><em>Expert Care</em></h1>
+      <p class="hero-desc">Experience gentle, precise dentistry at Jainam Dental Clinic. From routine check-ups to advanced dental implants — we restore confidence, one smile at a time.</p>
+      <div class="hero-actions">
+        <a class="btn-primary" href="tel:+919109522711">📞 Call 091095 22711</a>
+        <a class="btn-outline" href="#services">Our Services</a>
+      </div>
+      <div class="hero-badges">
+        <div class="hero-badge"><div class="hero-badge-icon">⭐</div><div><strong style="color:#fff">5.0 Rating</strong><br>43+ Google Reviews</div></div>
+        <div class="hero-badge"><div class="hero-badge-icon">🏥</div><div><strong style="color:#fff">Painless</strong><br>Treatments</div></div>
+        <div class="hero-badge"><div class="hero-badge-icon">🦷</div><div><strong style="color:#fff">Expert</strong><br>Dental Care</div></div>
+      </div>
+    </div>
+    <div class="hero-visual">
+
+      <!-- Smiling kid illustration -->
+      <div class="kid-illustration-wrap">
+        <svg viewBox="0 0 360 420" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:360px;filter:drop-shadow(0 20px 40px rgba(0,0,0,0.25))">
+          <defs>
+            <radialGradient id="bgCircle" cx="50%" cy="50%">
+              <stop offset="0%" stop-color="#1A8A94"/>
+              <stop offset="100%" stop-color="#093E43"/>
+            </radialGradient>
+            <radialGradient id="skinGrad" cx="40%" cy="30%">
+              <stop offset="0%" stop-color="#FDDCB5"/>
+              <stop offset="100%" stop-color="#F5B87A"/>
+            </radialGradient>
+            <radialGradient id="cheekGrad" cx="50%" cy="50%">
+              <stop offset="0%" stop-color="#F9A8A0" stop-opacity=".7"/>
+              <stop offset="100%" stop-color="#F9A8A0" stop-opacity="0"/>
+            </radialGradient>
+            <radialGradient id="eyeShine" cx="30%" cy="25%">
+              <stop offset="0%" stop-color="#fff"/>
+              <stop offset="100%" stop-color="#B8D4F8"/>
+            </radialGradient>
+            <linearGradient id="shirtGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#C9A84C"/>
+              <stop offset="100%" stop-color="#E8C86A"/>
+            </linearGradient>
+            <linearGradient id="teethGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" stop-color="#FFFFFF"/>
+              <stop offset="100%" stop-color="#F0F8F6"/>
+            </linearGradient>
+            <filter id="softShadow" x="-10%" y="-10%" width="120%" height="130%">
+              <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="rgba(0,0,0,0.15)"/>
+            </filter>
+            <clipPath id="headClip">
+              <ellipse cx="180" cy="145" rx="82" ry="90"/>
+            </clipPath>
+          </defs>
+
+          <!-- Background circle glow -->
+          <circle cx="180" cy="200" r="168" fill="url(#bgCircle)" opacity=".55"/>
+          <circle cx="180" cy="200" r="142" fill="rgba(255,255,255,.04)"/>
+
+          <!-- Decorative sparkles -->
+          <g fill="var(--gold, #C9A84C)" opacity=".75">
+            <polygon points="46,80 49,90 59,90 51,96 54,106 46,100 38,106 41,96 33,90 43,90" transform="scale(.55) translate(30,80)"/>
+            <polygon points="310,60 313,70 323,70 315,76 318,86 310,80 302,86 305,76 297,70 307,70" transform="scale(.45) translate(240,60)"/>
+          </g>
+          <circle cx="58" cy="88" r="4" fill="rgba(255,255,255,.35)"/>
+          <circle cx="302" cy="72" r="3" fill="rgba(255,255,255,.3)"/>
+          <circle cx="40" cy="280" r="5" fill="rgba(201,168,76,.4)"/>
+          <circle cx="320" cy="310" r="4" fill="rgba(255,255,255,.2)"/>
+          <text x="26" y="160" font-size="18" fill="rgba(201,168,76,.5)" font-family="Arial">+</text>
+          <text x="316" y="190" font-size="14" fill="rgba(255,255,255,.3)" font-family="Arial">+</text>
+
+          <!-- Neck -->
+          <rect x="158" y="228" width="44" height="38" rx="10" fill="url(#skinGrad)"/>
+
+          <!-- Shirt / body -->
+          <path d="M80,390 Q80,290 130,268 Q155,260 180,260 Q205,260 230,268 Q280,290 280,390Z" fill="url(#shirtGrad)" filter="url(#softShadow)"/>
+          <!-- Shirt collar V -->
+          <path d="M160,268 L180,295 L200,268" fill="none" stroke="rgba(255,255,255,.5)" stroke-width="2.5" stroke-linejoin="round"/>
+          <!-- Shirt pocket -->
+          <rect x="192" y="298" width="26" height="20" rx="4" fill="rgba(255,255,255,.18)" stroke="rgba(255,255,255,.3)" stroke-width="1"/>
+          <line x1="205" y1="298" x2="205" y2="303" stroke="rgba(255,255,255,.4)" stroke-width="1.5"/>
+
+          <!-- Hair back layer -->
+          <ellipse cx="180" cy="110" rx="84" ry="70" fill="#2C1A0E"/>
+          <!-- Hair top swoop -->
+          <path d="M100,120 Q105,55 180,48 Q255,55 260,120 Q250,80 230,72 Q205,62 180,60 Q155,62 130,72 Q110,80 100,120Z" fill="#3D2410"/>
+          <!-- Hair side curls -->
+          <path d="M98,130 Q88,118 92,108 Q96,98 102,105" fill="#2C1A0E" stroke="#2C1A0E" stroke-width="1"/>
+          <path d="M262,130 Q272,118 268,108 Q264,98 258,105" fill="#2C1A0E" stroke="#2C1A0E" stroke-width="1"/>
+
+          <!-- Face -->
+          <ellipse cx="180" cy="155" rx="80" ry="86" fill="url(#skinGrad)" filter="url(#softShadow)"/>
+
+          <!-- Ears -->
+          <ellipse cx="100" cy="158" rx="14" ry="18" fill="#F5B87A"/>
+          <ellipse cx="100" cy="158" rx="8" ry="11" fill="#EAAA6A"/>
+          <ellipse cx="260" cy="158" rx="14" ry="18" fill="#F5B87A"/>
+          <ellipse cx="260" cy="158" rx="8" ry="11" fill="#EAAA6A"/>
+
+          <!-- Eyebrows -->
+          <path d="M142,118 Q152,112 164,115" stroke="#3D2410" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+          <path d="M196,115 Q208,112 218,118" stroke="#3D2410" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+
+          <!-- Eyes — bright and wide open -->
+          <!-- Left eye white -->
+          <ellipse cx="153" cy="138" rx="16" ry="17" fill="white"/>
+          <!-- Left iris -->
+          <circle cx="153" cy="139" r="11" fill="url(#eyeShine)"/>
+          <circle cx="153" cy="139" r="10" fill="#4A90D9" opacity=".9"/>
+          <!-- Left pupil -->
+          <circle cx="155" cy="141" r="5.5" fill="#1A1A2E"/>
+          <!-- Left eye shine -->
+          <circle cx="150" cy="136" r="3" fill="white" opacity=".9"/>
+          <circle cx="157" cy="143" r="1.5" fill="white" opacity=".5"/>
+          <!-- Left eyelashes top -->
+          <path d="M137,128 Q140,122 145,125" stroke="#2C1A0E" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+          <path d="M143,124 Q145,118 150,122" stroke="#2C1A0E" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+          <path d="M150,122 Q153,116 157,121" stroke="#2C1A0E" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+          <path d="M157,122 Q162,117 165,123" stroke="#2C1A0E" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+          <path d="M164,125 Q169,121 169,127" stroke="#2C1A0E" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+
+          <!-- Right eye white -->
+          <ellipse cx="207" cy="138" rx="16" ry="17" fill="white"/>
+          <!-- Right iris -->
+          <circle cx="207" cy="139" r="11" fill="url(#eyeShine)"/>
+          <circle cx="207" cy="139" r="10" fill="#4A90D9" opacity=".9"/>
+          <!-- Right pupil -->
+          <circle cx="209" cy="141" r="5.5" fill="#1A1A2E"/>
+          <!-- Right eye shine -->
+          <circle cx="204" cy="136" r="3" fill="white" opacity=".9"/>
+          <circle cx="211" cy="143" r="1.5" fill="white" opacity=".5"/>
+          <!-- Right eyelashes top -->
+          <path d="M191,128 Q194,122 199,125" stroke="#2C1A0E" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+          <path d="M197,124 Q199,118 204,122" stroke="#2C1A0E" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+          <path d="M204,122 Q207,116 211,121" stroke="#2C1A0E" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+          <path d="M211,122 Q216,117 219,123" stroke="#2C1A0E" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+          <path d="M218,125 Q223,121 223,127" stroke="#2C1A0E" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+
+          <!-- Nose -->
+          <path d="M176,158 Q174,175 168,180 Q178,185 180,185 Q182,185 192,180 Q186,175 184,158" fill="rgba(200,120,60,.18)" stroke="none"/>
+          <circle cx="172" cy="178" r="5" fill="rgba(180,100,50,.2)"/>
+          <circle cx="188" cy="178" r="5" fill="rgba(180,100,50,.2)"/>
+
+          <!-- Cheek blush -->
+          <ellipse cx="132" cy="175" rx="20" ry="13" fill="url(#cheekGrad)"/>
+          <ellipse cx="228" cy="175" rx="20" ry="13" fill="url(#cheekGrad)"/>
+
+          <!-- BIG SMILE — open mouth -->
+          <!-- Mouth outer dark -->
+          <path d="M148,196 Q165,228 180,232 Q195,228 212,196 Q200,210 180,214 Q160,210 148,196Z" fill="#2C0A0A"/>
+          <!-- Lip top -->
+          <path d="M148,196 Q162,190 180,193 Q198,190 212,196 Q200,198 180,200 Q160,198 148,196Z" fill="#C0605A"/>
+          <!-- Lip bottom -->
+          <path d="M148,196 Q165,228 180,232 Q195,228 212,196 Q200,212 180,215 Q160,212 148,196Z" fill="#D4756F"/>
+          <!-- Teeth row — bright white with gaps -->
+          <clipPath id="teethClip">
+            <path d="M152,198 Q165,208 180,210 Q195,208 208,198 Q200,204 180,206 Q160,204 152,198Z"/>
+          </clipPath>
+          <g clip-path="url(#teethClip)">
+            <rect x="152" y="196" width="56" height="14" rx="2" fill="url(#teethGrad)"/>
+            <!-- Tooth dividers -->
+            <line x1="163" y1="196" x2="163" y2="210" stroke="rgba(180,210,200,.6)" stroke-width="1"/>
+            <line x1="172" y1="196" x2="172" y2="210" stroke="rgba(180,210,200,.6)" stroke-width="1"/>
+            <line x1="180" y1="196" x2="180" y2="210" stroke="rgba(180,210,200,.6)" stroke-width="1"/>
+            <line x1="188" y1="196" x2="188" y2="210" stroke="rgba(180,210,200,.6)" stroke-width="1"/>
+            <line x1="197" y1="196" x2="197" y2="210" stroke="rgba(180,210,200,.6)" stroke-width="1"/>
+            <!-- Teeth shine -->
+            <rect x="153" y="197" width="54" height="4" rx="1" fill="rgba(255,255,255,.55)"/>
+          </g>
+
+          <!-- Tongue peek -->
+          <ellipse cx="180" cy="222" rx="16" ry="8" fill="#E87070" opacity=".85"/>
+
+          <!-- Dimples -->
+          <circle cx="144" cy="195" r="3.5" fill="rgba(180,100,60,.2)"/>
+          <circle cx="216" cy="195" r="3.5" fill="rgba(180,100,60,.2)"/>
+
+          <!-- Hair front fringe -->
+          <path d="M100,128 Q112,70 145,65 Q162,62 180,62 Q198,62 215,65 Q248,70 260,128 Q245,95 225,85 Q206,76 180,74 Q154,76 135,85 Q115,95 100,128Z" fill="#2C1A0E"/>
+          <!-- Fringe strands -->
+          <path d="M128,80 Q134,68 142,74 Q136,72 130,82" fill="#3D2410"/>
+          <path d="M152,66 Q158,55 166,62 Q160,60 154,68" fill="#3D2410"/>
+          <path d="M208,66 Q214,55 220,62 Q214,60 210,68" fill="#3D2410"/>
+          <path d="M232,80 Q238,68 244,74 Q238,72 234,82" fill="#3D2410"/>
+
+          <!-- Tooth sparkle near mouth -->
+          <g opacity=".85">
+            <line x1="230" y1="196" x2="240" y2="186" stroke="#C9A84C" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="235" y1="198" x2="248" y2="198" stroke="#C9A84C" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="230" y1="200" x2="240" y2="210" stroke="#C9A84C" stroke-width="1.5" stroke-linecap="round"/>
+          </g>
+          <g opacity=".7">
+            <line x1="118" y1="193" x2="108" y2="183" stroke="#C9A84C" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="114" y1="195" x2="100" y2="195" stroke="#C9A84C" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="118" y1="197" x2="108" y2="207" stroke="#C9A84C" stroke-width="1.5" stroke-linecap="round"/>
+          </g>
+
+          <!-- Arms / hands raised in cheer -->
+          <!-- Left arm -->
+          <path d="M118,275 Q88,250 70,220 Q60,200 75,188 Q88,178 100,195 Q112,215 125,235" fill="url(#skinGrad)" stroke="#F0A860" stroke-width="1"/>
+          <!-- Left hand -->
+          <ellipse cx="72" cy="187" rx="14" ry="12" fill="url(#skinGrad)" transform="rotate(-20,72,187)"/>
+          <!-- Left fingers -->
+          <path d="M60,179 Q55,168 60,163 Q65,160 68,167" fill="url(#skinGrad)" stroke="#F0A860" stroke-width=".8"/>
+          <path d="M68,174 Q64,162 68,157 Q73,154 75,162" fill="url(#skinGrad)" stroke="#F0A860" stroke-width=".8"/>
+          <path d="M76,172 Q74,160 78,156 Q83,154 84,162" fill="url(#skinGrad)" stroke="#F0A860" stroke-width=".8"/>
+          <path d="M83,175 Q83,163 87,160 Q92,159 92,167" fill="url(#skinGrad)" stroke="#F0A860" stroke-width=".8"/>
+
+          <!-- Right arm -->
+          <path d="M242,275 Q272,250 290,220 Q300,200 285,188 Q272,178 260,195 Q248,215 235,235" fill="url(#skinGrad)" stroke="#F0A860" stroke-width="1"/>
+          <!-- Right hand -->
+          <ellipse cx="288" cy="187" rx="14" ry="12" fill="url(#skinGrad)" transform="rotate(20,288,187)"/>
+          <!-- Right fingers -->
+          <path d="M300,179 Q305,168 300,163 Q295,160 292,167" fill="url(#skinGrad)" stroke="#F0A860" stroke-width=".8"/>
+          <path d="M292,174 Q296,162 292,157 Q287,154 285,162" fill="url(#skinGrad)" stroke="#F0A860" stroke-width=".8"/>
+          <path d="M284,172 Q286,160 282,156 Q277,154 276,162" fill="url(#skinGrad)" stroke="#F0A860" stroke-width=".8"/>
+          <path d="M277,175 Q277,163 273,160 Q268,159 268,167" fill="url(#skinGrad)" stroke="#F0A860" stroke-width=".8"/>
+
+          <!-- Small tooth badge on shirt -->
+          <circle cx="180" cy="340" r="22" fill="rgba(255,255,255,.18)" stroke="rgba(255,255,255,.35)" stroke-width="1.5"/>
+          <text x="180" y="347" font-size="20" text-anchor="middle" font-family="Arial">🦷</text>
+        </svg>
+      </div>
+
+      <!-- Floating cards -->
+      <div class="rating-card">
+        <div class="rating-num">5.0</div>
+        <div>
+          <span class="rating-stars">★★★★★</span>
+          <div class="rating-label">43 Google Reviews</div>
+        </div>
+      </div>
+      <div class="patients-card">
+        <div>
+          <div class="patients-num">500+</div>
+          <div class="patients-label">Happy Patients</div>
+        </div>
+        <div style="font-size:1.6rem">😊</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WAVE -->
+<div class="wave-divider" style="background:var(--white)">
+  <svg viewBox="0 0 1440 60" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+    <path d="M0,0 C360,60 1080,60 1440,0 L1440,60 L0,60 Z" fill="var(--teal)"/>
+  </svg>
+</div>
+
+<!-- STATS BAR -->
+<div class="stats-bar">
+  <div class="stats-inner">
+    <div class="stat-item reveal">
+      <div class="stat-num">5.0</div>
+      <div class="stat-label">Google Rating</div>
+    </div>
+    <div class="stat-item reveal">
+      <div class="stat-num">43+</div>
+      <div class="stat-label">Reviews</div>
+    </div>
+    <div class="stat-item reveal">
+      <div class="stat-num">10+</div>
+      <div class="stat-label">Treatments Offered</div>
+    </div>
+    <div class="stat-item reveal">
+      <div class="stat-num">500+</div>
+      <div class="stat-label">Smiles Restored</div>
+    </div>
+  </div>
+</div>
+
+<!-- WAVE -->
+<div class="wave-divider" style="background:var(--white)">
+  <svg viewBox="0 0 1440 60" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+    <path d="M0,60 C360,0 1080,0 1440,60 L1440,0 L0,0 Z" fill="var(--teal)"/>
+  </svg>
+</div>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="section-header center reveal">
+    <span class="section-eyebrow">What We Offer</span>
+    <h2 class="section-title">Comprehensive <span>Dental Services</span></h2>
+    <p class="section-sub">From routine care to advanced restorative treatments — every procedure is performed with precision, gentleness, and the latest technology.</p>
+  </div>
+  <div class="services-grid">
+    <div class="service-card reveal">
+      <div class="service-icon">🔍</div>
+      <div class="service-name">Dental Check-Up</div>
+      <p class="service-desc">Comprehensive oral examination including X-rays, gum assessment, and early cavity detection to keep your smile healthy.</p>
+      <span class="service-tag">Preventive</span>
+    </div>
+    <div class="service-card reveal">
+      <div class="service-icon">🦷</div>
+      <div class="service-name">Painless Root Canal</div>
+      <p class="service-desc">Advanced endodontic treatment using modern anesthesia to save infected teeth — completely comfortable and effective.</p>
+      <span class="service-tag">Restorative</span>
+    </div>
+    <div class="service-card reveal">
+      <div class="service-icon">✨</div>
+      <div class="service-name">Teeth Whitening</div>
+      <p class="service-desc">Professional whitening treatments that brighten your smile by several shades, safe for enamel and long-lasting results.</p>
+      <span class="service-tag">Cosmetic</span>
+    </div>
+    <div class="service-card reveal">
+      <div class="service-icon">🔩</div>
+      <div class="service-name">Dental Implants</div>
+      <p class="service-desc">Permanent tooth replacement solutions that look, feel, and function just like natural teeth — the gold standard in restorative dentistry.</p>
+      <span class="service-tag">Restorative</span>
+    </div>
+    <div class="service-card reveal">
+      <div class="service-icon">👑</div>
+      <div class="service-name">Crowns &amp; Bridges</div>
+      <p class="service-desc">Custom-made porcelain crowns and bridges to restore broken teeth or replace missing ones with natural-looking precision.</p>
+      <span class="service-tag">Restorative</span>
+    </div>
+    <div class="service-card reveal">
+      <div class="service-icon">🧹</div>
+      <div class="service-name">Scaling &amp; Polishing</div>
+      <p class="service-desc">Professional deep cleaning to remove tartar, plaque, and surface stains — essential for preventing gum disease and bad breath.</p>
+      <span class="service-tag">Preventive</span>
+    </div>
+    <div class="service-card reveal">
+      <div class="service-icon">📡</div>
+      <div class="service-name">Oral Radiology</div>
+      <p class="service-desc">Digital X-rays and advanced oral radiology diagnostics for accurate diagnosis and treatment planning with minimal radiation.</p>
+      <span class="service-tag">Diagnostics</span>
+    </div>
+    <div class="service-card reveal">
+      <div class="service-icon">💉</div>
+      <div class="service-name">Oral Medicine</div>
+      <p class="service-desc">Specialized treatment for oral mucosal diseases, infections, ulcers, and pain management by a trained oral medicine expert.</p>
+      <span class="service-tag">Specialist</span>
+    </div>
+    <div class="service-card reveal">
+      <div class="service-icon">😁</div>
+      <div class="service-name">Smile Designing</div>
+      <p class="service-desc">Comprehensive smile makeovers combining veneers, whitening, reshaping, and alignment to craft your perfect smile.</p>
+      <span class="service-tag">Cosmetic</span>
+    </div>
+  </div>
+</section>
+
+<!-- DOCTOR SECTION -->
+<section id="doctor">
+  <div class="doctor-inner">
+    <div class="doctor-photo-wrap reveal">
+      <div class="doctor-photo-bg">
+        <svg viewBox="0 0 340 400" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="docBg" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#0D5C63"/>
+              <stop offset="100%" stop-color="#1A8A94"/>
+            </linearGradient>
+          </defs>
+          <rect width="340" height="400" fill="url(#docBg)"/>
+          <!-- Abstract doctor silhouette -->
+          <ellipse cx="170" cy="130" rx="62" ry="68" fill="rgba(255,255,255,.18)"/>
+          <ellipse cx="170" cy="130" rx="50" ry="55" fill="rgba(255,255,255,.14)"/>
+          <!-- Head circle -->
+          <circle cx="170" cy="115" r="44" fill="rgba(255,255,255,.22)"/>
+          <!-- Body -->
+          <path d="M90,280 Q90,220 170,210 Q250,220 250,280 L270,400 L70,400Z" fill="rgba(255,255,255,.14)"/>
+          <!-- Stethoscope hint -->
+          <path d="M145,200 Q135,240 130,255 Q125,268 138,272 Q152,276 152,265 Q152,255 165,252" stroke="rgba(201,168,76,.7)" stroke-width="4" fill="none" stroke-linecap="round"/>
+          <!-- Coat buttons -->
+          <circle cx="170" cy="240" r="4" fill="rgba(255,255,255,.3)"/>
+          <circle cx="170" cy="258" r="4" fill="rgba(255,255,255,.3)"/>
+          <circle cx="170" cy="276" r="4" fill="rgba(255,255,255,.3)"/>
+          <!-- Background circles -->
+          <circle cx="290" cy="60" r="38" fill="rgba(255,255,255,.06)"/>
+          <circle cx="48" cy="320" r="28" fill="rgba(201,168,76,.12)"/>
+          <!-- Plus signs -->
+          <text x="28" y="90" font-size="22" fill="rgba(255,255,255,.2)" font-family="Arial">+</text>
+          <text x="292" y="200" font-size="18" fill="rgba(201,168,76,.4)" font-family="Arial">+</text>
+          <!-- Diploma hint -->
+          <rect x="60" y="330" width="50" height="38" rx="4" fill="rgba(255,255,255,.1)" stroke="rgba(255,255,255,.2)" stroke-width="1"/>
+          <text x="68" y="348" font-size="8" fill="rgba(255,255,255,.5)" font-family="Arial">BDS</text>
+          <text x="66" y="360" font-size="7" fill="rgba(255,255,255,.4)" font-family="Arial">MDS</text>
+        </svg>
+      </div>
+      <div class="doctor-badge-float">
+        <div><span>8+</span></div>
+        <p>Years Experience</p>
+      </div>
+    </div>
+    <div class="doctor-info reveal">
+      <div class="doctor-name-tag">Meet Our Dentist</div>
+      <h2 class="doctor-name">Dr. Shefali Jain</h2>
+      <p class="doctor-title">BDS · Specialist in Oral Medicine &amp; Radiology</p>
+      <p class="doctor-bio">Dr. Shefali Jain is a highly trained and compassionate dentist known for her gentle chairside manner and precise clinical skills. With specialization in Oral Medicine and Radiology, she brings a diagnostic depth to every treatment that ensures optimal outcomes for each patient. Her clinic has earned a perfect 5-star rating from dozens of patients across Raipur for her dedication to painless, patient-first dentistry.</p>
+      <div class="doctor-quals">
+        <span class="qual-chip">BDS (Bachelor of Dental Surgery)</span>
+        <span class="qual-chip">Oral Medicine &amp; Radiology</span>
+        <span class="qual-chip">Painless Procedures</span>
+        <span class="qual-chip">Cosmetic Dentistry</span>
+        <span class="qual-chip">Dental Implantology</span>
+        <span class="qual-chip">Digital X-Ray Diagnostics</span>
+      </div>
+      <div class="doctor-contact">
+        <a class="doc-btn doc-btn-primary" href="tel:+919109522711">📞 Call Clinic</a>
+        <a class="doc-btn doc-btn-ghost" href="https://wa.me/919109522711" target="_blank">💬 WhatsApp</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section id="reviews">
+  <div class="section-header center reveal">
+    <span class="section-eyebrow">Patient Reviews</span>
+    <h2 class="section-title">What Our <span>Patients Say</span></h2>
+    <p class="section-sub">Real experiences from real patients — see why Jainam Dental is Raipur's most trusted dental clinic.</p>
+  </div>
+  <div style="max-width:1200px;margin:0 auto">
+    <div class="reviews-overall reveal">
+      <div>
+        <div class="reviews-big-num">5.0</div>
+        <span class="reviews-stars-row">★★★★★</span>
+        <div class="reviews-count">Based on 43 Google reviews &amp; 42 JustDial ratings</div>
+        <div class="platform-badges" style="margin-top:14px">
+          <div class="platform-badge">🔍 Google · 5.0</div>
+          <div class="platform-badge">📋 JustDial · 5.0</div>
+        </div>
+      </div>
+      <div class="reviews-bars">
+        <div class="bar-row"><span class="bar-label">5★</span><div class="bar-track"><div class="bar-fill" style="width:96%"></div></div><span class="bar-pct">96%</span></div>
+        <div class="bar-row"><span class="bar-label">4★</span><div class="bar-track"><div class="bar-fill" style="width:3%"></div></div><span class="bar-pct">3%</span></div>
+        <div class="bar-row"><span class="bar-label">3★</span><div class="bar-track"><div class="bar-fill" style="width:1%"></div></div><span class="bar-pct">1%</span></div>
+        <div class="bar-row"><span class="bar-label">2★</span><div class="bar-track"><div class="bar-fill" style="width:0%"></div></div><span class="bar-pct">0%</span></div>
+        <div class="bar-row"><span class="bar-label">1★</span><div class="bar-track"><div class="bar-fill" style="width:0%"></div></div><span class="bar-pct">0%</span></div>
+      </div>
+      <div style="text-align:center">
+        <div style="font-size:3rem;margin-bottom:8px">😊</div>
+        <p style="color:rgba(255,255,255,.7);font-size:.88rem;max-width:180px">100% recommend to friends &amp; family</p>
+      </div>
+    </div>
+    <div class="reviews-grid">
+      <div class="review-card reveal">
+        <div class="review-quote">"</div>
+        <p class="review-text">Experienced doctor and polite behaviour. I recommend best dental care clinic. The treatment was absolutely painless and the results are amazing.</p>
+        <div class="review-footer">
+          <div class="reviewer-info">
+            <div class="reviewer-avatar">R</div>
+            <div><div class="reviewer-name">Rahul S.</div><div class="reviewer-sub">Google Review</div></div>
+          </div>
+          <span class="review-stars">★★★★★</span>
+        </div>
+      </div>
+      <div class="review-card reveal">
+        <div class="review-quote">"</div>
+        <p class="review-text">It was an amazing experience ✨ Surely gonna recommend to everyone to go there. Dr. Shefali is incredibly gentle and made me completely comfortable.</p>
+        <div class="review-footer">
+          <div class="reviewer-info">
+            <div class="reviewer-avatar" style="background:#7C3AED">P</div>
+            <div><div class="reviewer-name">Priya M.</div><div class="reviewer-sub">Google Review</div></div>
+          </div>
+          <span class="review-stars">★★★★★</span>
+        </div>
+      </div>
+      <div class="review-card reveal">
+        <div class="review-quote">"</div>
+        <p class="review-text">The best doctor, worth a visit even for your small dental issues. Professional, clean clinic and very affordable. Highly recommended in Raipur!</p>
+        <div class="review-footer">
+          <div class="reviewer-info">
+            <div class="reviewer-avatar" style="background:#059669">A</div>
+            <div><div class="reviewer-name">Amit K.</div><div class="reviewer-sub">Google Review</div></div>
+          </div>
+          <span class="review-stars">★★★★★</span>
+        </div>
+      </div>
+      <div class="review-card reveal">
+        <div class="review-quote">"</div>
+        <p class="review-text">Got my root canal done here. Was very nervous beforehand but Dr. Shefali put me at ease. Completely painless procedure. Will never go anywhere else!</p>
+        <div class="review-footer">
+          <div class="reviewer-info">
+            <div class="reviewer-avatar" style="background:#DC2626">S</div>
+            <div><div class="reviewer-name">Sunita D.</div><div class="reviewer-sub">JustDial Review</div></div>
+          </div>
+          <span class="review-stars">★★★★★</span>
+        </div>
+      </div>
+      <div class="review-card reveal">
+        <div class="review-quote">"</div>
+        <p class="review-text">Excellent dental implant treatment. The clinic is very hygienic and modern. Staff are warm and welcoming. My implants look and feel completely natural.</p>
+        <div class="review-footer">
+          <div class="reviewer-info">
+            <div class="reviewer-avatar" style="background:#D97706">V</div>
+            <div><div class="reviewer-name">Vivek T.</div><div class="reviewer-sub">Google Review</div></div>
+          </div>
+          <span class="review-stars">★★★★★</span>
+        </div>
+      </div>
+      <div class="review-card reveal">
+        <div class="review-quote">"</div>
+        <p class="review-text">Teeth whitening results were beyond my expectations! My smile looks incredible. The doctor explains everything clearly before proceeding. Truly the best in Raipur.</p>
+        <div class="review-footer">
+          <div class="reviewer-info">
+            <div class="reviewer-avatar" style="background:#0891B2">N</div>
+            <div><div class="reviewer-name">Neha G.</div><div class="reviewer-sub">JustDial Review</div></div>
+          </div>
+          <span class="review-stars">★★★★★</span>
+        </div>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:36px">
+      <a href="https://www.google.com/maps/place/Jainam+Dental+Clinic" target="_blank" rel="noopener" class="btn-outline" style="border-color:rgba(255,255,255,.35);color:rgba(255,255,255,.8);display:inline-flex;gap:8px;padding:12px 28px;border-radius:40px;border:2px solid;text-decoration:none;font-weight:500;transition:.2s;" onmouseover="this.style.background='rgba(255,255,255,.08)'" onmouseout="this.style.background='transparent'">
+        View All 43 Reviews on Google →
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FACILITIES -->
+<section id="facilities">
+  <div class="section-header center reveal">
+    <span class="section-eyebrow">Our Facilities</span>
+    <h2 class="section-title">Modern <span>Clinic Amenities</span></h2>
+    <p class="section-sub">We've invested in state-of-the-art equipment and a warm, hygienic environment so every visit is comfortable and safe.</p>
+  </div>
+  <div class="facilities-grid">
+    <div class="facility-card reveal">
+      <div class="facility-icon">📡</div>
+      <div class="facility-name">Digital X-Ray</div>
+      <p class="facility-desc">Instant digital radiographs with 90% less radiation than conventional X-rays — faster, safer diagnosis.</p>
+      <span class="facility-avail">✓ Available</span>
+    </div>
+    <div class="facility-card reveal">
+      <div class="facility-icon">🔬</div>
+      <div class="facility-name">Sterilization Unit</div>
+      <p class="facility-desc">Hospital-grade autoclave sterilization. Every instrument is fully sterilized between patients for total safety.</p>
+      <span class="facility-avail">✓ Available</span>
+    </div>
+    <div class="facility-card reveal">
+      <div class="facility-icon">🦷</div>
+      <div class="facility-name">Advanced Dental Chair</div>
+      <p class="facility-desc">Comfortable, fully adjustable dental chairs with built-in LED lighting and patient positioning control.</p>
+      <span class="facility-avail">✓ Available</span>
+    </div>
+    <div class="facility-card reveal">
+      <div class="facility-icon">💉</div>
+      <div class="facility-name">Painless Anesthesia</div>
+      <p class="facility-desc">Computerized local anesthesia delivery for a completely painless injection experience every time.</p>
+      <span class="facility-avail">✓ Available</span>
+    </div>
+    <div class="facility-card reveal">
+      <div class="facility-icon">🌡️</div>
+      <div class="facility-name">Infection Control</div>
+      <p class="facility-desc">Strict infection control protocols, disposable instruments wherever possible, and regular sanitization of treatment areas.</p>
+      <span class="facility-avail">✓ Available</span>
+    </div>
+    <div class="facility-card reveal">
+      <div class="facility-icon">🅿️</div>
+      <div class="facility-name">Easy Parking</div>
+      <p class="facility-desc">Convenient parking space available near the clinic for patients arriving by car or two-wheeler.</p>
+      <span class="facility-avail">✓ Available</span>
+    </div>
+    <div class="facility-card reveal">
+      <div class="facility-icon">📋</div>
+      <div class="facility-name">OPG / Panoramic X-Ray</div>
+      <p class="facility-desc">Full mouth panoramic imaging for comprehensive treatment planning for implants and orthodontic cases.</p>
+      <span class="facility-avail">✓ Available</span>
+    </div>
+    <div class="facility-card reveal">
+      <div class="facility-icon">☕</div>
+      <div class="facility-name">Comfortable Waiting Area</div>
+      <p class="facility-desc">Relaxing, air-conditioned waiting area with seating and refreshments — designed to ease dental anxiety.</p>
+      <span class="facility-avail">✓ Available</span>
+    </div>
+  </div>
+</section>
+
+<!-- APPOINTMENT BOOKING -->
+<section id="appointment">
+  <div class="appt-layout">
+    <!-- Left: Info -->
+    <div class="appt-info reveal">
+      <span class="section-eyebrow">Online Booking</span>
+      <h2 class="section-title">Book Your <span>Appointment</span></h2>
+      <p class="section-sub">Reserve your slot in under 2 minutes. Choose your treatment, pick a date & time, and we'll confirm within the hour.</p>
+      <div class="appt-why">
+        <div class="appt-why-item">
+          <div class="appt-why-icon">⚡</div>
+          <div class="appt-why-text">
+            <strong>Instant Confirmation</strong>
+            <span>Receive a WhatsApp confirmation within 60 minutes of booking.</span>
+          </div>
+        </div>
+        <div class="appt-why-item">
+          <div class="appt-why-icon">🔒</div>
+          <div class="appt-why-text">
+            <strong>No-Pressure Booking</strong>
+            <span>Cancel or reschedule easily — just call or WhatsApp us anytime.</span>
+          </div>
+        </div>
+        <div class="appt-why-item">
+          <div class="appt-why-icon">🦷</div>
+          <div class="appt-why-text">
+            <strong>All Treatments Available</strong>
+            <span>From routine cleanings to implants — book any service in one place.</span>
+          </div>
+        </div>
+        <div class="appt-why-item">
+          <div class="appt-why-icon">👩‍⚕️</div>
+          <div class="appt-why-text">
+            <strong>Direct with Dr. Shefali</strong>
+            <span>Your appointment is personally managed by the doctor herself.</span>
+          </div>
+        </div>
+      </div>
+      <div class="appt-contact-note">
+        <div style="font-size:1.6rem;flex-shrink:0">💬</div>
+        <div>Prefer to book by phone? Call us at <strong><a href="tel:+919109522711" style="color:var(--gold-light)">091095 22711</a></strong> or <a href="https://wa.me/919109522711" target="_blank" style="color:var(--gold-light)">WhatsApp us</a> directly.</div>
+      </div>
+    </div>
+
+    <!-- Right: Form card -->
+    <div class="reveal">
+      <div class="appt-form-card" id="apptFormCard">
+
+        <!-- Success screen (hidden initially) -->
+        <div class="appt-success" id="apptSuccess">
+          <div class="success-checkmark">✅</div>
+          <div class="success-title">Appointment Requested!</div>
+          <p class="success-sub">Thank you! We'll confirm your slot via WhatsApp or call within 60 minutes. See you soon at Jainam Dental.</p>
+          <div class="success-summary" id="successSummary"></div>
+          <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+            <a id="whatsappConfirm" href="#" target="_blank" rel="noopener"
+              style="background:#25D366;color:#fff;padding:11px 22px;border-radius:40px;font-size:.88rem;font-weight:700;text-decoration:none;display:inline-flex;align-items:center;gap:7px">
+              💬 Confirm on WhatsApp
+            </a>
+            <button class="appt-reset-btn" onclick="resetForm()">Book Another</button>
+          </div>
+        </div>
+
+        <!-- Form (shown by default) -->
+        <div id="apptFormInner">
+          <div class="appt-form-title">Request an Appointment</div>
+          <p class="appt-form-sub">3 quick steps — takes less than 2 minutes</p>
+
+          <!-- Step indicators -->
+          <div class="appt-steps" id="apptSteps">
+            <div class="appt-step active" id="step-ind-1">
+              <div class="appt-step-dot">1</div>
+              <div class="appt-step-label">Services</div>
+            </div>
+            <div class="appt-step" id="step-ind-2">
+              <div class="appt-step-dot">2</div>
+              <div class="appt-step-label">Schedule</div>
+            </div>
+            <div class="appt-step" id="step-ind-3">
+              <div class="appt-step-dot">3</div>
+              <div class="appt-step-label">Your Details</div>
+            </div>
+          </div>
+
+          <!-- PANEL 1: Service Selection -->
+          <div class="appt-panel active" id="appt-panel-1">
+            <p style="font-size:.85rem;color:var(--gray);margin-bottom:14px">Select one or more treatments you need: <span style="color:#EF4444">*</span></p>
+            <div class="service-select-grid" id="serviceGrid">
+              <label class="svc-option" data-service="Dental Check-Up">
+                <input type="checkbox" value="Dental Check-Up">
+                <div class="svc-check"></div>
+                <span class="svc-emoji">🔍</span>
+                <div><div class="svc-name">Dental Check-Up</div><div class="svc-tag-small">Preventive</div></div>
+              </label>
+              <label class="svc-option" data-service="Painless Root Canal">
+                <input type="checkbox" value="Painless Root Canal">
+                <div class="svc-check"></div>
+                <span class="svc-emoji">🦷</span>
+                <div><div class="svc-name">Painless Root Canal</div><div class="svc-tag-small">Restorative</div></div>
+              </label>
+              <label class="svc-option" data-service="Teeth Whitening">
+                <input type="checkbox" value="Teeth Whitening">
+                <div class="svc-check"></div>
+                <span class="svc-emoji">✨</span>
+                <div><div class="svc-name">Teeth Whitening</div><div class="svc-tag-small">Cosmetic</div></div>
+              </label>
+              <label class="svc-option" data-service="Dental Implants">
+                <input type="checkbox" value="Dental Implants">
+                <div class="svc-check"></div>
+                <span class="svc-emoji">🔩</span>
+                <div><div class="svc-name">Dental Implants</div><div class="svc-tag-small">Restorative</div></div>
+              </label>
+              <label class="svc-option" data-service="Crowns & Bridges">
+                <input type="checkbox" value="Crowns & Bridges">
+                <div class="svc-check"></div>
+                <span class="svc-emoji">👑</span>
+                <div><div class="svc-name">Crowns &amp; Bridges</div><div class="svc-tag-small">Restorative</div></div>
+              </label>
+              <label class="svc-option" data-service="Scaling & Polishing">
+                <input type="checkbox" value="Scaling & Polishing">
+                <div class="svc-check"></div>
+                <span class="svc-emoji">🧹</span>
+                <div><div class="svc-name">Scaling &amp; Polishing</div><div class="svc-tag-small">Preventive</div></div>
+              </label>
+              <label class="svc-option" data-service="Oral Radiology">
+                <input type="checkbox" value="Oral Radiology">
+                <div class="svc-check"></div>
+                <span class="svc-emoji">📡</span>
+                <div><div class="svc-name">Oral Radiology</div><div class="svc-tag-small">Diagnostics</div></div>
+              </label>
+              <label class="svc-option" data-service="Oral Medicine">
+                <input type="checkbox" value="Oral Medicine">
+                <div class="svc-check"></div>
+                <span class="svc-emoji">💉</span>
+                <div><div class="svc-name">Oral Medicine</div><div class="svc-tag-small">Specialist</div></div>
+              </label>
+              <label class="svc-option" data-service="Smile Designing">
+                <input type="checkbox" value="Smile Designing">
+                <div class="svc-check"></div>
+                <span class="svc-emoji">😁</span>
+                <div><div class="svc-name">Smile Designing</div><div class="svc-tag-small">Cosmetic</div></div>
+              </label>
+              <label class="svc-option" data-service="Other / Consultation">
+                <input type="checkbox" value="Other / Consultation">
+                <div class="svc-check"></div>
+                <span class="svc-emoji">🩺</span>
+                <div><div class="svc-name">Other / Consultation</div><div class="svc-tag-small">General</div></div>
+              </label>
+            </div>
+            <div class="selected-summary" id="selectedSummary">
+              <span style="color:var(--gray);font-size:.82rem">No service selected yet — pick at least one above.</span>
+            </div>
+            <div id="svc-error" style="font-size:.78rem;color:#EF4444;margin-bottom:10px;display:none">⚠ Please select at least one service to continue.</div>
+            <div class="appt-nav">
+              <button class="appt-btn-next" id="btn-next-1" onclick="goToStep(2)">Continue to Schedule →</button>
+            </div>
+          </div>
+
+          <!-- PANEL 2: Date & Time -->
+          <div class="appt-panel" id="appt-panel-2">
+            <div class="appt-field">
+              <label class="appt-label" for="apptDate">Preferred Date <span>*</span></label>
+              <input type="date" class="appt-input" id="apptDate" min="">
+              <div class="field-error" id="err-date">Please select a date.</div>
+            </div>
+            <div class="appt-field">
+              <label class="appt-label">Preferred Time Slot <span>*</span></label>
+              <div class="time-slots" id="timeSlots">
+                <div class="time-slot" data-time="10:00 AM">10:00 AM</div>
+                <div class="time-slot" data-time="11:00 AM">11:00 AM</div>
+                <div class="time-slot" data-time="12:00 PM">12:00 PM</div>
+                <div class="time-slot" data-time="2:00 PM">2:00 PM</div>
+                <div class="time-slot" data-time="3:00 PM">3:00 PM</div>
+                <div class="time-slot" data-time="4:00 PM">4:00 PM</div>
+                <div class="time-slot" data-time="5:00 PM">5:00 PM</div>
+                <div class="time-slot" data-time="6:00 PM">6:00 PM</div>
+                <div class="time-slot unavail" data-time="7:00 PM">7:00 PM</div>
+              </div>
+              <div class="field-error" id="err-time" style="display:none">Please select a time slot.</div>
+            </div>
+            <div id="sunday-warn" style="display:none;background:#FEF3C7;border:1px solid #F59E0B;border-radius:10px;padding:10px 14px;font-size:.82rem;color:#92400E;margin-bottom:4px">
+              ⚠ The clinic is closed on Sundays. Please choose another day.
+            </div>
+            <div class="appt-field">
+              <label class="appt-label" for="visitType">Visit Type</label>
+              <select class="appt-select" id="visitType">
+                <option value="">Select visit type</option>
+                <option value="First Visit">First Visit / New Patient</option>
+                <option value="Follow-Up">Follow-Up Visit</option>
+                <option value="Emergency">Emergency / Urgent Care</option>
+              </select>
+            </div>
+            <div class="appt-nav">
+              <button class="appt-btn-back" onclick="goToStep(1)">← Back</button>
+              <button class="appt-btn-next" onclick="goToStep(3)">Continue to Details →</button>
+            </div>
+          </div>
+
+          <!-- PANEL 3: Patient Details -->
+          <div class="appt-panel" id="appt-panel-3">
+            <div class="appt-field-row">
+              <div class="appt-field">
+                <label class="appt-label" for="patName">Full Name <span>*</span></label>
+                <input type="text" class="appt-input" id="patName" placeholder="Your full name">
+                <div class="field-error" id="err-name">Please enter your name.</div>
+              </div>
+              <div class="appt-field">
+                <label class="appt-label" for="patPhone">Phone Number <span>*</span></label>
+                <input type="tel" class="appt-input" id="patPhone" placeholder="10-digit mobile">
+                <div class="field-error" id="err-phone">Enter a valid 10-digit number.</div>
+              </div>
+            </div>
+            <div class="appt-field">
+              <label class="appt-label" for="patAge">Age</label>
+              <input type="number" class="appt-input" id="patAge" placeholder="Your age" min="1" max="120">
+            </div>
+            <div class="appt-field">
+              <label class="appt-label" for="patNote">Additional Notes / Symptoms</label>
+              <textarea class="appt-textarea" id="patNote" placeholder="Describe any pain, swelling, or other concerns…"></textarea>
+            </div>
+            <div style="background:#FEF9EC;border:1px solid #E8C86A;border-radius:10px;padding:12px 14px;font-size:.8rem;color:#7A5A00;margin-bottom:18px">
+              📋 Your details are confidential and shared only with Dr. Shefali Jain for appointment purposes.
+            </div>
+            <div class="appt-nav">
+              <button class="appt-btn-back" onclick="goToStep(2)">← Back</button>
+              <button class="appt-btn-next" id="submitBtn" onclick="submitAppt()">✅ Confirm Appointment</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LOCATION & MAP -->
+<section id="location">
+  <div class="location-inner">
+    <div class="reveal">
+      <span class="section-eyebrow">Find Us</span>
+      <h2 class="section-title">Visit Our <span>Clinic</span></h2>
+      <div class="contact-items">
+        <div class="contact-item">
+          <div class="contact-item-icon">📍</div>
+          <div>
+            <div class="contact-item-label">Address</div>
+            <div class="contact-item-val">Jainam Dental Clinic, Near Shristi Palazzo,<br>Avanti Vihar, Jivan Vihar,<br>Raipur, Chhattisgarh 492001</div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-item-icon">📞</div>
+          <div>
+            <div class="contact-item-label">Phone</div>
+            <div class="contact-item-val"><a href="tel:+919109522711">091095 22711</a></div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-item-icon">💬</div>
+          <div>
+            <div class="contact-item-label">WhatsApp</div>
+            <div class="contact-item-val"><a href="https://wa.me/919109522711" target="_blank">Message Us on WhatsApp</a></div>
+          </div>
+        </div>
+      </div>
+
+      <h3 style="font-family:'Playfair Display',serif;font-size:1.1rem;margin-bottom:14px;color:var(--charcoal)">Clinic Hours</h3>
+      <table class="hours-table">
+        <tr><td>Monday</td><td class="open">10:00 AM – 8:00 PM</td></tr>
+        <tr><td>Tuesday</td><td class="open">10:00 AM – 8:00 PM</td></tr>
+        <tr><td>Wednesday</td><td class="open">10:00 AM – 8:00 PM</td></tr>
+        <tr><td>Thursday</td><td class="open">10:00 AM – 8:00 PM</td></tr>
+        <tr><td>Friday</td><td class="open">10:00 AM – 8:00 PM</td></tr>
+        <tr><td>Saturday</td><td class="open">10:00 AM – 6:00 PM</td></tr>
+        <tr><td>Sunday</td><td class="closed-td">Closed</td></tr>
+      </table>
+
+      <div style="display:flex;gap:12px;flex-wrap:wrap">
+        <a class="btn-primary" href="https://maps.app.goo.gl/jainam-dental" target="_blank" style="font-size:.88rem;padding:11px 22px">
+          🗺️ Get Directions
+        </a>
+        <a class="btn-outline" href="tel:+919109522711" style="font-size:.88rem;padding:9px 22px;border:2px solid var(--teal);color:var(--teal)">
+          📞 Call Now
+        </a>
+      </div>
+    </div>
+
+    <div class="reveal">
+      <div class="map-embed-wrap">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3718.7!2d81.6522!3d21.2259!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a28dda227869ba3%3A0xfbca5548b3b58129!2sJainam%20Dental%20Clinic%20%7C%20Dr.%20Shefali%20Jain%20%7C%20Best%20Dental%20Treatment%20in%20Raipur!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Jainam Dental Clinic Location">
+        </iframe>
+      </div>
+      <p style="font-size:.8rem;color:var(--gray);margin-top:10px;text-align:center">
+        Near Shristi Palazzo, Jivan Vihar · Raipur, Chhattisgarh
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="footer-logo">🦷 Jainam Dental Clinic</div>
+      <p class="footer-tagline">Your trusted dental care partner in Raipur. Led by Dr. Shefali Jain — bringing expertise, compassion, and modern technology to every smile.</p>
+      <div class="footer-social">
+        <a class="social-link" href="https://www.instagram.com" target="_blank" title="Instagram">📸</a>
+        <a class="social-link" href="https://www.facebook.com/530724836939959" target="_blank" title="Facebook">👍</a>
+        <a class="social-link" href="https://in.linkedin.com/in/dr-shefali-jain-0441261a4" target="_blank" title="LinkedIn">💼</a>
+        <a class="social-link" href="https://wa.me/919109522711" target="_blank" title="WhatsApp">💬</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Services</h4>
+      <ul class="footer-links">
+        <li><a href="#services">Dental Check-Up</a></li>
+        <li><a href="#services">Root Canal</a></li>
+        <li><a href="#services">Teeth Whitening</a></li>
+        <li><a href="#services">Dental Implants</a></li>
+        <li><a href="#services">Crowns &amp; Bridges</a></li>
+        <li><a href="#services">Smile Designing</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul class="footer-links">
+        <li><a href="#doctor">Meet Dr. Shefali</a></li>
+        <li><a href="#reviews">Patient Reviews</a></li>
+        <li><a href="#facilities">Our Facilities</a></li>
+        <li><a href="#location">Location &amp; Hours</a></li>
+        <li><a href="tel:+919109522711">Book Appointment</a></li>
+        <li><a href="https://wa.me/919109522711">WhatsApp Us</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom" style="max-width:1200px">
+    <p>© 2025 Jainam Dental Clinic. Dr. Shefali Jain. All rights reserved.</p>
+    <p>Near Shristi Palazzo, Jivan Vihar, Raipur 492001 · <a href="tel:+919109522711">091095 22711</a></p>
+  </div>
+</footer>
+
+<script>
+  // Scroll Reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+  reveals.forEach(el => observer.observe(el));
+
+  // Mobile menu
+  function toggleMenu() {
+    document.getElementById('mobileMenu').classList.toggle('open');
+  }
+  function closeMenu() {
+    document.getElementById('mobileMenu').classList.remove('open');
+  }
+
+  // Smooth nav background on scroll
+  window.addEventListener('scroll', () => {
+    const nav = document.querySelector('nav');
+    if (window.scrollY > 60) {
+      nav.style.background = 'rgba(7,50,55,0.98)';
+    } else {
+      nav.style.background = 'rgba(13,92,99,0.97)';
+    }
+  });
+
+  // Counter animation
+  function animateCounter(el, target, suffix='') {
+    let current = 0;
+    const step = target / 60;
+    const interval = setInterval(() => {
+      current = Math.min(current + step, target);
+      el.textContent = Math.floor(current) + suffix;
+      if (current >= target) clearInterval(interval);
+    }, 25);
+  }
+
+  // Trigger counters when stats come into view
+  const statsObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const nums = entry.target.querySelectorAll('.stat-num');
+        const targets = [5, 43, 10, 500];
+        const suffixes = ['.0', '+', '+', '+'];
+        nums.forEach((num, i) => {
+          if (i === 0) { num.textContent = '5.0'; return; }
+          animateCounter(num, targets[i], suffixes[i]);
+        });
+        statsObserver.disconnect();
+      }
+    });
+  }, { threshold: 0.5 });
+  const statsBar = document.querySelector('.stats-bar');
+  if (statsBar) statsObserver.observe(statsBar);
+
+  // ── APPOINTMENT BOOKING LOGIC ──
+  let currentStep = 1;
+  let selectedServices = [];
+  let selectedTime = '';
+
+  // Set min date to today
+  const dateInput = document.getElementById('apptDate');
+  if (dateInput) {
+    const today = new Date();
+    const yyyy = today.getFullYear();
+    const mm = String(today.getMonth() + 1).padStart(2, '0');
+    const dd = String(today.getDate()).padStart(2, '0');
+    dateInput.min = `${yyyy}-${mm}-${dd}`;
+    dateInput.addEventListener('change', function() {
+      const d = new Date(this.value + 'T00:00:00');
+      const isSunday = d.getDay() === 0;
+      document.getElementById('sunday-warn').style.display = isSunday ? 'block' : 'none';
+    });
+  }
+
+  // Service selection
+  document.querySelectorAll('.svc-option').forEach(option => {
+    option.addEventListener('click', function() {
+      const cb = this.querySelector('input[type="checkbox"]');
+      cb.checked = !cb.checked;
+      this.classList.toggle('selected', cb.checked);
+      const svcName = this.dataset.service;
+      if (cb.checked) {
+        if (!selectedServices.includes(svcName)) selectedServices.push(svcName);
+      } else {
+        selectedServices = selectedServices.filter(s => s !== svcName);
+      }
+      updateSelectedSummary();
+    });
+  });
+
+  function updateSelectedSummary() {
+    const summary = document.getElementById('selectedSummary');
+    if (!selectedServices.length) {
+      summary.innerHTML = '<span style="color:var(--gray);font-size:.82rem">No service selected yet — pick at least one above.</span>';
+    } else {
+      summary.innerHTML = selectedServices.map(s =>
+        `<span class="svc-pill">${s} <button type="button" onclick="removeService('${s}')">×</button></span>`
+      ).join('');
+    }
+  }
+
+  function removeService(name) {
+    selectedServices = selectedServices.filter(s => s !== name);
+    document.querySelectorAll('.svc-option').forEach(opt => {
+      if (opt.dataset.service === name) {
+        const cb = opt.querySelector('input');
+        cb.checked = false;
+        opt.classList.remove('selected');
+      }
+    });
+    updateSelectedSummary();
+  }
+
+  // Time slot selection
+  document.querySelectorAll('.time-slot:not(.unavail)').forEach(slot => {
+    slot.addEventListener('click', function() {
+      document.querySelectorAll('.time-slot').forEach(s => s.classList.remove('selected'));
+      this.classList.add('selected');
+      selectedTime = this.dataset.time;
+    });
+  });
+
+  function goToStep(step) {
+    // Validate before advancing
+    if (step > currentStep) {
+      if (currentStep === 1) {
+        if (!selectedServices.length) {
+          document.getElementById('svc-error').style.display = 'block';
+          return;
+        }
+        document.getElementById('svc-error').style.display = 'none';
+      }
+      if (currentStep === 2) {
+        const date = document.getElementById('apptDate').value;
+        const errDate = document.getElementById('err-date');
+        const errTime = document.getElementById('err-time');
+        let ok = true;
+        if (!date) { errDate.style.display = 'block'; document.getElementById('apptDate').classList.add('error'); ok = false; }
+        else { errDate.style.display = 'none'; document.getElementById('apptDate').classList.remove('error'); }
+        if (!selectedTime) { errTime.style.display = 'block'; ok = false; }
+        else { errTime.style.display = 'none'; }
+        // Block Sundays
+        if (date) {
+          const d = new Date(date + 'T00:00:00');
+          if (d.getDay() === 0) { ok = false; }
+        }
+        if (!ok) return;
+      }
+    }
+
+    // Update panels
+    document.getElementById(`appt-panel-${currentStep}`).classList.remove('active');
+    document.getElementById(`appt-panel-${step}`).classList.add('active');
+
+    // Update step indicators
+    for (let i = 1; i <= 3; i++) {
+      const ind = document.getElementById(`step-ind-${i}`);
+      ind.classList.remove('active', 'done');
+      if (i < step) ind.classList.add('done');
+      if (i === step) ind.classList.add('active');
+    }
+    // Mark dots as checkmarks for done steps
+    document.querySelectorAll('.appt-step.done .appt-step-dot').forEach(dot => {
+      dot.textContent = '✓';
+    });
+    currentStep = step;
+  }
+
+  function submitAppt() {
+    // Validate step 3
+    const name = document.getElementById('patName').value.trim();
+    const phone = document.getElementById('patPhone').value.trim();
+    const errName = document.getElementById('err-name');
+    const errPhone = document.getElementById('err-phone');
+    let ok = true;
+    if (!name) { errName.style.display = 'block'; document.getElementById('patName').classList.add('error'); ok = false; }
+    else { errName.style.display = 'none'; document.getElementById('patName').classList.remove('error'); }
+    if (!phone || !/^[6-9]\d{9}$/.test(phone.replace(/\s/g,''))) { errPhone.style.display = 'block'; document.getElementById('patPhone').classList.add('error'); ok = false; }
+    else { errPhone.style.display = 'none'; document.getElementById('patPhone').classList.remove('error'); }
+    if (!ok) return;
+
+    const date = document.getElementById('apptDate').value;
+    const formattedDate = date ? new Date(date + 'T00:00:00').toLocaleDateString('en-IN', {weekday:'short',day:'numeric',month:'long',year:'numeric'}) : 'TBD';
+    const visitType = document.getElementById('visitType').value || 'Not specified';
+    const note = document.getElementById('patNote').value.trim();
+    const age = document.getElementById('patAge').value;
+
+    // Build success summary
+    const summary = document.getElementById('successSummary');
+    summary.innerHTML = `
+      <div class="success-row"><span>Patient</span><span>${name}${age ? ', ' + age + ' yrs' : ''}</span></div>
+      <div class="success-row"><span>Phone</span><span>${phone}</span></div>
+      <div class="success-row"><span>Service(s)</span><span>${selectedServices.join(', ')}</span></div>
+      <div class="success-row"><span>Date</span><span>${formattedDate}</span></div>
+      <div class="success-row"><span>Time</span><span>${selectedTime || 'Not selected'}</span></div>
+      <div class="success-row"><span>Visit Type</span><span>${visitType}</span></div>
+      ${note ? `<div class="success-row"><span>Notes</span><span>${note}</span></div>` : ''}
+    `;
+
+    // Build WhatsApp message
+    const waMsg = encodeURIComponent(
+      `Hello Dr. Shefali Jain 👋\n\nI'd like to book an appointment at Jainam Dental Clinic.\n\n` +
+      `*Patient:* ${name}${age ? ' (' + age + ' yrs)' : ''}\n` +
+      `*Phone:* ${phone}\n` +
+      `*Service(s):* ${selectedServices.join(', ')}\n` +
+      `*Date:* ${formattedDate}\n` +
+      `*Time:* ${selectedTime || 'Flexible'}\n` +
+      `*Visit Type:* ${visitType}\n` +
+      (note ? `*Notes:* ${note}\n` : '') +
+      `\nPlease confirm my appointment. Thank you! 🙏`
+    );
+    document.getElementById('whatsappConfirm').href = `https://wa.me/919109522711?text=${waMsg}`;
+
+    // Show success
+    document.getElementById('apptFormInner').style.display = 'none';
+    document.getElementById('apptSuccess').classList.add('show');
+  }
+
+  function resetForm() {
+    // Reset state
+    selectedServices = [];
+    selectedTime = '';
+    currentStep = 1;
+    // Reset UI
+    document.querySelectorAll('.svc-option').forEach(o => { o.classList.remove('selected'); o.querySelector('input').checked = false; });
+    updateSelectedSummary();
+    document.querySelectorAll('.time-slot').forEach(s => s.classList.remove('selected'));
+    document.getElementById('apptDate').value = '';
+    document.getElementById('visitType').value = '';
+    document.getElementById('patName').value = '';
+    document.getElementById('patPhone').value = '';
+    document.getElementById('patAge').value = '';
+    document.getElementById('patNote').value = '';
+    document.querySelectorAll('.field-error').forEach(e => e.style.display = 'none');
+    document.querySelectorAll('.appt-input.error,.appt-select.error').forEach(e => e.classList.remove('error'));
+    // Reset panels & steps
+    document.querySelectorAll('.appt-panel').forEach(p => p.classList.remove('active'));
+    document.getElementById('appt-panel-1').classList.add('active');
+    for (let i = 1; i <= 3; i++) {
+      const ind = document.getElementById(`step-ind-${i}`);
+      ind.classList.remove('active', 'done');
+      ind.querySelector('.appt-step-dot').textContent = i;
+    }
+    document.getElementById('step-ind-1').classList.add('active');
+    document.getElementById('sunday-warn').style.display = 'none';
+    document.getElementById('svc-error').style.display = 'none';
+    // Show form, hide success
+    document.getElementById('apptFormInner').style.display = 'block';
+    document.getElementById('apptSuccess').classList.remove('show');
+  }
+
+</script>
+
+</body>
+</html>
